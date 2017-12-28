@@ -1,0 +1,21 @@
+{
+  "name": "react-native-dev-menu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/zoontek/react-native-dev-menu.git",
+  "author": "Mathieu Acthernoene <zoontek@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "precommit": "lint-staged",
+    "prettier": "prettier --write '**/*.{js,md}'"
+  },
+  "lint-staged": {
+    "**/*.{js,md}": ["prettier --write", "git add"]
+  },
+  "devDependencies": {
+    "flow-bin": "0.57.3",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.2"
+  }
+}
