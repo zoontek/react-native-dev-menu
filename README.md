@@ -10,6 +10,17 @@ Add custom items to the React Native dev menu.
 
 _It currently supports React Native **0.48+**._
 
+![](https://github.com/zoontek/react-native-dev-menu/blob/master/docs/screenshots.png?raw=true)
+
+## Usage
+
+```js
+if (__DEV__) {
+  const DevMenu = require('react-native-dev-menu');
+  DevMenu.addItem('Say Hello', () => alert('Hello!'));
+}
+```
+
 ## Setup
 
 ```sh
@@ -75,15 +86,4 @@ protected List<ReactPackage> getPackages() {
 }
 
 // ...
-```
-
-_**P.S.**: You will need to recompile your project with `react-native run-android`._
-
-## Usage
-
-```js
-if (__DEV__) {
-  const DevMenu = require('react-native-dev-menu');
-  DevMenu.addItem('Say Hello', () => alert('Hello!'));
-}
 ```
