@@ -2,8 +2,9 @@
 
 'use strict';
 
-import { NativeModules, NativeEventEmitter } from 'react-native';
-const { RNDevMenu } = NativeModules;
+const ReactNative = require('react-native');
+const NativeEventEmitter = ReactNative.NativeEventEmitter;
+const RNDevMenu = ReactNative.NativeModules.RNDevMenu;
 
 type RNDevMenuModule = {
   _eventHandlers?: Map<string, () => any>,
@@ -11,7 +12,7 @@ type RNDevMenuModule = {
   addItem: (name: string, handler: () => any) => void
 };
 
-let Module: RNDevMenuModule = {
+let DevMenu: RNDevMenuModule = {
   addItem(name, handler) {
     if (!__DEV__) {
       return;
@@ -41,4 +42,4 @@ let Module: RNDevMenuModule = {
   }
 };
 
-export default Module;
+module.exports = DevMenu;
