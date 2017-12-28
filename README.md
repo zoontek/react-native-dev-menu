@@ -6,7 +6,9 @@
 ![MIT](https://img.shields.io/dub/l/vibe-d.svg)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-Add custom items to the React Native dev menu. _It supports React Native 0.48+_
+Add custom items to the React Native dev menu.
+
+_It currently supports React Native **0.48+**._
 
 ## Setup
 
@@ -22,7 +24,7 @@ react-native link react-native-dev-menu
 
 ### iOS specific setup
 
-### CocoaPods linking
+#### CocoaPods linking
 
 After installing the npm package, add the following line to your Podfile :
 
@@ -40,23 +42,23 @@ pod 'RNDevMenu', :path => '../node_modules/react-native-dev-menu'
 
 #### Manual linking
 
-After installing the package, add the following line to your `./android/settings.gradle` file :
+After installing the package, add the following line to the `./android/settings.gradle` file :
 
-```groovy
+```gradle
 include ':app', ':react-native-dev-menu'
 project(':react-native-dev-menu').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-dev-menu/android')
 ```
 
-Include it as dependency in `./android/app/build.gradle` file :
+Include it as dependency in the `./android/app/build.gradle` file :
 
-```groovy
+```gradle
 dependencies {
     compile project(':react-native-dev-menu')
     // ...
 }
 ```
 
-Finally, you need to link the package to your MainApplication (`./android/app/src/main/java/…/MainApplication.java`) :
+Finally, you need to link the package to the `./android/app/src/main/java/…/MainApplication.java` file :
 
 ```java
 import com.zoontek.rndevmenu.RNDevMenuPackage;
@@ -75,7 +77,7 @@ protected List<ReactPackage> getPackages() {
 // ...
 ```
 
-After that, you will need to recompile your project with `react-native run-android`.
+_**P.S.**: You will need to recompile your project with `react-native run-android`._
 
 ## Usage
 
