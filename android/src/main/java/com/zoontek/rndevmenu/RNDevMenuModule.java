@@ -21,22 +21,28 @@ public class RNDevMenuModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void addItem(final String name) {
-    ReactApplication application = (ReactApplication)getReactApplicationContext()
-      .getCurrentActivity()
-      .getApplication();
+  public void addItem(final String name, Promise promise) {
+    try {
+      ReactApplication application = (ReactApplication)getReactApplicationContext()
+        .getCurrentActivity()
+        .getApplication();
 
-    DevSupportManager manager = application
-      .getReactNativeHost()
-      .getReactInstanceManager()
-      .getDevSupportManager();
+      DevSupportManager manager = application
+        .getReactNativeHost()
+        .getReactInstanceManager()
+        .getDevSupportManager();
 
-    manager.addCustomDevOption(name, new DevOptionHandler() {
-      @Override
-      public void onOptionSelected() {
-        getReactApplicationContext().getJSModule(RCTDeviceEventEmitter.class)
-                .emit("customDevOptionTap", name);
-      }
-    });
+      manager.addCustomDevOption(name, new DevOptionHandler() {
+        @Override
+        public void onOptionSelected() {
+          getReactApplicationContext().getJSModule(RCTDeviceEventEmitter.class)
+                  .emit("customDevOptionTap", name);
+        }
+      });
+
+      promise.resolve(null);
+    } catch (Exception e) {
+      promise.reject(e);
+    }
   }
 }

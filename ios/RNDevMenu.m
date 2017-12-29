@@ -20,13 +20,22 @@ RCT_EXPORT_MODULE();
   return @[@"customDevOptionTap"];
 }
 
-RCT_EXPORT_METHOD(addItem:(NSString *)name)
+RCT_EXPORT_METHOD(addItem:(NSString *)name
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
 {
-  [self.bridge.devMenu addItem:[RCTDevMenuItem buttonItemWithTitleBlock:^NSString *{
-    return name;
-  } handler:^{
-    [self sendEventWithName:@"customDevOptionTap" body:name];
-  }]];
+  @try {
+    [self.bridge.devMenu addItem:[RCTDevMenuItem buttonItemWithTitleBlock:^NSString *{
+      return name;
+    } handler:^{
+      [self sendEventWithName:@"customDevOptionTap" body:name];
+    }]];
+
+    resolve(nil);
+  }
+  @catch (NSError *error) {
+    reject(@"E_DEV_MENU_ADD_ITEM", error.localizedDescription, error);
+  }
 }
 
 @end

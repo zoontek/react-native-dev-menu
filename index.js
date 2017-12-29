@@ -9,13 +9,13 @@ const RNDevMenu = ReactNative.NativeModules.RNDevMenu;
 type RNDevMenuModule = {
   _eventHandlers?: Map<string, () => any>,
   _eventEmitter?: NativeEventEmitter,
-  addItem: (name: string, handler: () => any) => void
+  addItem: (name: string, handler: () => any) => Promise<void>
 };
 
 let DevMenu: RNDevMenuModule = {
   addItem(name, handler) {
     if (!__DEV__) {
-      return;
+      return Promise.resolve();
     }
 
     if (!this._eventHandlers) {
@@ -38,7 +38,7 @@ let DevMenu: RNDevMenuModule = {
       });
     }
 
-    RNDevMenu.addItem(name);
+    return RNDevMenu.addItem(name);
   }
 };
 
