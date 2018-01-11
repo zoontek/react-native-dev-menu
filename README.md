@@ -8,6 +8,8 @@
 
 Add custom items to the React Native dev menu.
 
+The native part of this module is a variation of [react-native-async-storage-dev-menu-item](https://github.com/jsoendermann/react-native-async-storage-dev-menu-item/).
+
 _It currently supports React Native **0.48+**._
 
 ![](https://github.com/zoontek/react-native-dev-menu/blob/master/docs/screenshots.png?raw=true)
