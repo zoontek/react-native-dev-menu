@@ -1,6 +1,6 @@
 {
   "name": "react-native-dev-menu",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "main": "index.js",
   "repository": "https://github.com/zoontek/react-native-dev-menu.git",
   "author": "Mathieu Acthernoene <zoontek@gmail.com>",
@@ -16,10 +16,13 @@
       "git add"
     ]
   },
+  "peerDependencies": {
+    "react-native": ">=0.56.0"
+  },
   "devDependencies": {
     "flow-bin": "0.80.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.2",
-    "prettier": "^1.14.2"
+    "husky": "0.14.3",
+    "lint-staged": "7.2.2",
+    "prettier": "1.14.2"
   }
 }
