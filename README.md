@@ -10,9 +10,12 @@ Add custom items to the React Native dev menu.
 
 The native part of this module is a variation of [react-native-async-storage-dev-menu-item](https://github.com/jsoendermann/react-native-async-storage-dev-menu-item/).
 
-_It currently supports React Native **0.48+**._
+## Support
 
-![](https://github.com/zoontek/react-native-dev-menu/blob/master/docs/screenshots.png?raw=true)
+| Version | React Native Support |
+| ------- | -------------------- |
+| 2.0.0   | 0.56.0+              |
+| 1.0.2   | 0.48.0 - 0.55.0      |
 
 ## Usage
 
@@ -22,6 +25,10 @@ if (__DEV__) {
   DevMenu.addItem('Say Hello', () => alert('Hello!'));
 }
 ```
+
+## Screenshots
+
+![](https://github.com/zoontek/react-native-dev-menu/blob/master/docs/screenshots.png?raw=true)
 
 ## Setup
 
