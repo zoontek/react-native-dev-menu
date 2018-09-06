@@ -10,4 +10,4 @@
 munge_underscores=true
 
 [version]
-^0.57.0
+^0.80.0
