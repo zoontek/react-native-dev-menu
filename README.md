@@ -35,6 +35,8 @@ yarn add react-native-dev-menu
 react-native link react-native-dev-menu
 ```
 
+_NB: If you use a Cocoapods and have a `Podfile`, `react-native link` will only add this library as a dependency, and you'll need to run `pod install`._
+
 ### iOS specific setup
 
 #### CocoaPods linking
@@ -44,6 +46,8 @@ After installing the npm package, add the following line to your Podfile :
 ```ruby
 pod 'RNDevMenu', :path => '../node_modules/react-native-dev-menu'
 ```
+
+And run `pod install`
 
 #### Manual linking
 
