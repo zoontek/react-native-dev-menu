@@ -32,14 +32,14 @@ if (__DEV__) {
 
 ## Setup
 
-```sh
-npm install --save react-native-dev-menu
+```bash
+$ npm install --save react-native-dev-menu
 # --- or ---
-yarn add react-native-dev-menu
+$ yarn add react-native-dev-menu
 ```
 
-```sh
-react-native link react-native-dev-menu
+```bash
+$ react-native link react-native-dev-menu
 ```
 
 _NB: If you use a Cocoapods and have a `Podfile`, `react-native link` will only add this library as a dependency, and you'll need to run `pod install`._
@@ -54,7 +54,9 @@ After installing the npm package, add the following line to your Podfile :
 pod 'RNDevMenu', :path => '../node_modules/react-native-dev-menu'
 ```
 
-And run `pod install`
+```bash
+$ pod install
+```
 
 #### Manual linking
 
