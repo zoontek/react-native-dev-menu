@@ -1,7 +1,8 @@
 declare module "react-native-dev-menu" {
-    class DevMenu {
-        static addItem(title: string, action: () => void): void;
-    }
+  interface RNDevMenuModule {
+    addItem: (title: string, action: () => void) => void;
+  }
 
-    export default DevMenu;
+  let DevMenu = RNDevMenuModule;
+  export default DevMenu;
 }
