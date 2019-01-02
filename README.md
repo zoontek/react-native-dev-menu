@@ -14,8 +14,8 @@ The native part of this module is a variation of [react-native-async-storage-dev
 
 | Version | React Native Support |
 | ------- | -------------------- |
-| 2.0.0   | 0.56.0+              |
-| 1.0.2   | 0.48.0 - 0.55.0      |
+| 2.+     | 0.56+                |
+| 1.0.2   | 0.48 - 0.55          |
 
 ## Usage
 
@@ -79,7 +79,7 @@ Include it as dependency in the `./android/app/build.gradle` file :
 
 ```gradle
 dependencies {
-    compile project(':react-native-dev-menu')
+    implementation project(':react-native-dev-menu')
     // ...
 }
 ```
