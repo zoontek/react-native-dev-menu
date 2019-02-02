@@ -3,6 +3,6 @@ declare module "react-native-dev-menu" {
     addItem: (title: string, action: () => void) => void;
   }
 
-  let DevMenu = RNDevMenuModule;
+  let DevMenu: RNDevMenuModule;
   export default DevMenu;
 }
