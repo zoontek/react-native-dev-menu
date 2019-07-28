@@ -2,7 +2,6 @@
 
 'use strict';
 
-// $FlowFixMe
 const ReactNative = require('react-native');
 const NativeEventEmitter = ReactNative.NativeEventEmitter;
 const RNDevMenu = ReactNative.NativeModules.RNDevMenu;

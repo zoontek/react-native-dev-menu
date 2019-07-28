@@ -4,7 +4,7 @@ package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
 Pod::Spec.new do |s|
   s.name           = "RNDevMenu"
-  s.summary        = "Add custom items to the React Native dev menu"
+  s.summary        = package['description']
   s.version        = package['version']
 
   s.authors        = { "Mathieu Acthernoene" => "zoontek@gmail.com" }

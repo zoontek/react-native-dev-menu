@@ -14,8 +14,8 @@ The native part of this module is a variation of [react-native-async-storage-dev
 
 | Version | React Native Support |
 | ------- | -------------------- |
-| 2.+     | 0.56+                |
-| 1.0.2   | 0.48 - 0.55          |
+| 3.0.0+  | 0.60.0+              |
+| 2.0.0+  | 0.56.0+              |
 
 ## Usage
 
@@ -37,6 +37,10 @@ $ npm install --save react-native-dev-menu
 # --- or ---
 $ yarn add react-native-dev-menu
 ```
+
+## Manual linking
+
+If you use this package with React Native 0.60.0or superior, you will probably don't need to link it. Otherwise if it still cannot be found, follow this steps to link it manually :
 
 ```bash
 $ react-native link react-native-dev-menu

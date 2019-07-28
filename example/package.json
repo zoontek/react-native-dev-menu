@@ -1,16 +1,20 @@
 {
-  "name": "Example",
+  "name": "RNDevMenuExample",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "react-native start",
+    "postinstall": "rm -rf node_modules/react-native-dev-menu/{example,node_modules}",
+    "reinstall": "rm -rf node_modules ios/Pods && yarn install && cd ios && pod install"
   },
   "dependencies": {
-    "react": "16.4.1",
-    "react-native": "0.56.0",
+    "react": "16.8.6",
+    "react-native": "0.60.4",
     "react-native-dev-menu": "../"
   },
   "devDependencies": {
-    "babel-preset-react-native": "^5"
+    "@babel/core": "7.5.5",
+    "@babel/runtime": "7.5.5",
+    "metro-react-native-babel-preset": "0.55.0"
   }
 }
