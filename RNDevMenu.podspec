@@ -17,6 +17,6 @@ Pod::Spec.new do |s|
   s.exclude_files  = "example/**/*"
 
   s.dependency       "React-Core"
-  s.dependency       "React-DevSupport"
+  s.dependency       "React-Core/DevSupport"
   s.dependency       "React-RCTNetwork"
 end
