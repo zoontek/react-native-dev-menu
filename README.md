@@ -14,8 +14,9 @@ The native part of this module is a variation of [react-native-async-storage-dev
 
 | Version | React Native Support |
 | ------- | -------------------- |
-| 3.0.0+  | 0.60.0+              |
-| 2.0.0+  | 0.56.0+              |
+| 4.0.0+  | 0.61.0+              |
+| 3.0.0+  | 0.60.0 - 0.60.6      |
+| 2.0.0+  | 0.56.0 - 0.59.10     |
 
 ## Usage
 

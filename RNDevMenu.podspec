@@ -1,22 +1,23 @@
 require 'json'
-
-package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
+package = JSON.parse(File.read('./package.json'))
 
 Pod::Spec.new do |s|
-  s.name           = "RNDevMenu"
-  s.summary        = package['description']
-  s.version        = package['version']
+  s.name                      = "RNDevMenu"
+  s.dependency                  "React-Core"
+  s.dependency                  "React-Core/DevSupport"
+  s.dependency                  "React-RCTNetwork"
 
-  s.authors        = { "Mathieu Acthernoene" => "zoontek@gmail.com" }
-  s.homepage       = "https://github.com/zoontek/react-native-dev-menu"
-  s.license        = "MIT"
-  s.platform       = :ios, "9.0"
+  s.version                   = package["version"]
+  s.license                   = package["license"]
+  s.summary                   = package["description"]
+  s.authors                   = package["author"]
+  s.homepage                  = package["homepage"]
 
-  s.source         = { :git => "https://github.com/zoontek/react-native-dev-menu.git" }
-  s.source_files   = "ios/**/*.{h,m}"
-  s.exclude_files  = "example/**/*"
+  s.platform                  = :ios, "9.0"
+  s.ios.deployment_target     = "9.0"
+  s.tvos.deployment_target    = "11.0"
+  s.requires_arc              = true
 
-  s.dependency       "React-Core"
-  s.dependency       "React-Core/DevSupport"
-  s.dependency       "React-RCTNetwork"
+  s.source                    = { :git => package["repository"]["url"], :tag => s.version }
+  s.source_files              = "ios/*.{h,m}"
 end

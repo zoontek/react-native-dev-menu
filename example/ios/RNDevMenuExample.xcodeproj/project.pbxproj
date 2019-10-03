@@ -11,12 +11,11 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		F270F9C7B2311811533231F7 /* libPods-RNDevMenuExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90679E03FDFBD68DBA1B504A /* libPods-RNDevMenuExample.a */; };
+		5446A1783978B8A279DB42C9 /* libPods-RNDevMenuExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28603013D37596DC9FB496F1 /* libPods-RNDevMenuExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		0281BE94E7A9C668E3A083A6 /* Pods-RNDevMenuExample-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDevMenuExample-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RNDevMenuExample-tvOSTests/Pods-RNDevMenuExample-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* RNDevMenuExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNDevMenuExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RNDevMenuExample/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RNDevMenuExample/AppDelegate.m; sourceTree = "<group>"; };
@@ -24,15 +23,10 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RNDevMenuExample/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RNDevMenuExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RNDevMenuExample/main.m; sourceTree = "<group>"; };
-		517C036177B8AEF60543B816 /* Pods-RNDevMenuExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDevMenuExampleTests.release.xcconfig"; path = "Target Support Files/Pods-RNDevMenuExampleTests/Pods-RNDevMenuExampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		52DD560C23A141AAAA50304F /* Pods-RNDevMenuExample-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDevMenuExample-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-RNDevMenuExample-tvOS/Pods-RNDevMenuExample-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		85511A3253C5199EFC128EE9 /* Pods-RNDevMenuExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDevMenuExample.debug.xcconfig"; path = "Target Support Files/Pods-RNDevMenuExample/Pods-RNDevMenuExample.debug.xcconfig"; sourceTree = "<group>"; };
-		90679E03FDFBD68DBA1B504A /* libPods-RNDevMenuExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNDevMenuExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A21B351491C6329EEDCB2BE5 /* Pods-RNDevMenuExample-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDevMenuExample-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RNDevMenuExample-tvOS/Pods-RNDevMenuExample-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		E501D7DBB6D0A7A793E6CFD7 /* Pods-RNDevMenuExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDevMenuExample.release.xcconfig"; path = "Target Support Files/Pods-RNDevMenuExample/Pods-RNDevMenuExample.release.xcconfig"; sourceTree = "<group>"; };
+		28603013D37596DC9FB496F1 /* libPods-RNDevMenuExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNDevMenuExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F11D7407CEF86D1D2403E12C /* Pods-RNDevMenuExample-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDevMenuExample-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-RNDevMenuExample-tvOSTests/Pods-RNDevMenuExample-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		F6E1A7217AEF1991CA7B8880 /* Pods-RNDevMenuExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDevMenuExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-RNDevMenuExampleTests/Pods-RNDevMenuExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F2EB4862B03E8710FD6645A4 /* Pods-RNDevMenuExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDevMenuExample.debug.xcconfig"; path = "Target Support Files/Pods-RNDevMenuExample/Pods-RNDevMenuExample.debug.xcconfig"; sourceTree = "<group>"; };
+		FE7734BF7606099275184EA3 /* Pods-RNDevMenuExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDevMenuExample.release.xcconfig"; path = "Target Support Files/Pods-RNDevMenuExample/Pods-RNDevMenuExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F270F9C7B2311811533231F7 /* libPods-RNDevMenuExample.a in Frameworks */,
+				5446A1783978B8A279DB42C9 /* libPods-RNDevMenuExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				90679E03FDFBD68DBA1B504A /* libPods-RNDevMenuExample.a */,
+				28603013D37596DC9FB496F1 /* libPods-RNDevMenuExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -94,14 +88,8 @@
 		C76C2B976140EAAE4EDEF9EB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				85511A3253C5199EFC128EE9 /* Pods-RNDevMenuExample.debug.xcconfig */,
-				E501D7DBB6D0A7A793E6CFD7 /* Pods-RNDevMenuExample.release.xcconfig */,
-				52DD560C23A141AAAA50304F /* Pods-RNDevMenuExample-tvOS.debug.xcconfig */,
-				A21B351491C6329EEDCB2BE5 /* Pods-RNDevMenuExample-tvOS.release.xcconfig */,
-				0281BE94E7A9C668E3A083A6 /* Pods-RNDevMenuExample-tvOSTests.debug.xcconfig */,
-				F11D7407CEF86D1D2403E12C /* Pods-RNDevMenuExample-tvOSTests.release.xcconfig */,
-				F6E1A7217AEF1991CA7B8880 /* Pods-RNDevMenuExampleTests.debug.xcconfig */,
-				517C036177B8AEF60543B816 /* Pods-RNDevMenuExampleTests.release.xcconfig */,
+				F2EB4862B03E8710FD6645A4 /* Pods-RNDevMenuExample.debug.xcconfig */,
+				FE7734BF7606099275184EA3 /* Pods-RNDevMenuExample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -113,7 +101,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RNDevMenuExample" */;
 			buildPhases = (
-				466944A68447FE48C4C2C5C9 /* [CP] Check Pods Manifest.lock */,
+				C8C52481A072F7AF680B5E94 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -137,6 +125,11 @@
 			attributes = {
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Facebook;
+				TargetAttributes = {
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 745449BDR9;
+					};
+				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "RNDevMenuExample" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -184,7 +177,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		466944A68447FE48C4C2C5C9 /* [CP] Check Pods Manifest.lock */ = {
+		C8C52481A072F7AF680B5E94 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,11 +247,12 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85511A3253C5199EFC128EE9 /* Pods-RNDevMenuExample.debug.xcconfig */;
+			baseConfigurationReference = F2EB4862B03E8710FD6645A4 /* Pods-RNDevMenuExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 745449BDR9;
 				INFOPLIST_FILE = RNDevMenuExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -274,10 +268,11 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E501D7DBB6D0A7A793E6CFD7 /* Pods-RNDevMenuExample.release.xcconfig */;
+			baseConfigurationReference = FE7734BF7606099275184EA3 /* Pods-RNDevMenuExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 745449BDR9;
 				INFOPLIST_FILE = RNDevMenuExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

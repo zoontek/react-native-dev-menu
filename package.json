@@ -1,11 +1,15 @@
 {
   "name": "react-native-dev-menu",
-  "description": "Add custom items to the React Native dev menu",
-  "version": "3.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/zoontek/react-native-dev-menu.git",
-  "author": "Mathieu Acthernoene <zoontek@gmail.com>",
+  "version": "4.0.0",
   "license": "MIT",
+  "description": "Add custom items to the React Native dev menu",
+  "author": "Mathieu Acthernoene <zoontek@gmail.com>",
+  "main": "index.js",
+  "homepage": "https://github.com/zoontek/react-native-dev-menu#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zoontek/react-native-dev-menu.git"
+  },
   "keywords": [
     "react-native",
     "react native",
@@ -28,12 +32,12 @@
     ]
   },
   "peerDependencies": {
-    "react-native": ">=0.60.0"
+    "react-native": ">=0.61.0"
   },
   "devDependencies": {
-    "flow-bin": "0.98.0",
-    "husky": "3.0.1",
-    "lint-staged": "9.2.1",
+    "flow-bin": "0.106.0",
+    "husky": "3.0.8",
+    "lint-staged": "9.4.1",
     "prettier": "1.18.2"
   }
 }

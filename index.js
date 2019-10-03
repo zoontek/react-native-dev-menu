@@ -2,6 +2,7 @@
 
 'use strict';
 
+// $FlowFixMe
 const ReactNative = require('react-native');
 const NativeEventEmitter = ReactNative.NativeEventEmitter;
 const RNDevMenu = ReactNative.NativeModules.RNDevMenu;
@@ -14,7 +15,6 @@ type RNDevMenuModule = {
 
 let DevMenu: RNDevMenuModule = {
   addItem(name, handler) {
-    // $FlowFixMe
     if (!__DEV__) {
       return Promise.resolve();
     }
