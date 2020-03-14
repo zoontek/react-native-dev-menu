@@ -1,6 +1,6 @@
 {
   "name": "react-native-dev-menu",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "license": "MIT",
   "description": "Add custom items to the React Native dev menu",
   "author": "Mathieu Acthernoene <zoontek@gmail.com>",
@@ -26,9 +26,8 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,json,md}": [
-      "yarn format",
-      "git add"
+    "**/*.{js,json,md,ts,tsx}": [
+      "prettier --write"
     ]
   },
   "peerDependencies": {
@@ -36,8 +35,8 @@
   },
   "devDependencies": {
     "flow-bin": "0.106.0",
-    "husky": "3.0.8",
-    "lint-staged": "9.4.1",
-    "prettier": "1.18.2"
+    "husky": "4.2.3",
+    "lint-staged": "10.0.8",
+    "prettier": "1.19.1"
   }
 }
