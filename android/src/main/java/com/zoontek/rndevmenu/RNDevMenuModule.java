@@ -9,7 +9,15 @@ import com.facebook.react.devsupport.interfaces.DevOptionHandler;
 import com.facebook.react.devsupport.interfaces.DevSupportManager;
 import com.facebook.react.modules.core.DeviceEventManagerModule.RCTDeviceEventEmitter;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 public class RNDevMenuModule extends ReactContextBaseJavaModule {
+
+  @Nullable
+  private List<String> mNames;
 
   public RNDevMenuModule(ReactApplicationContext reactContext) {
     super(reactContext);
@@ -22,6 +30,13 @@ public class RNDevMenuModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void addItem(final String name, Promise promise) {
+    if (mNames == null) {
+      mNames = new ArrayList<>();
+    }
+    if (mNames.contains(name)) {
+      promise.resolve(null);
+    }
+
     try {
       ReactApplication application = (ReactApplication)getReactApplicationContext()
         .getCurrentActivity()
@@ -40,6 +55,7 @@ public class RNDevMenuModule extends ReactContextBaseJavaModule {
         }
       });
 
+      mNames.add(name);
       promise.resolve(null);
     } catch (Exception e) {
       promise.reject(e);
