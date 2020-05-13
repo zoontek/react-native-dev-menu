@@ -1,6 +1,6 @@
 {
   "name": "react-native-dev-menu",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "license": "MIT",
   "description": "Add custom items to the React Native dev menu",
   "author": "Mathieu Acthernoene <zoontek@gmail.com>",
