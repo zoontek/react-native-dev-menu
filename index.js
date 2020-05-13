@@ -7,37 +7,27 @@ const ReactNative = require('react-native');
 const NativeEventEmitter = ReactNative.NativeEventEmitter;
 const RNDevMenu = ReactNative.NativeModules.RNDevMenu;
 
-let emitter: NativeEventEmitter | void;
-let handlers: Map<string, () => any> | void;
+const emitter: NativeEventEmitter = new NativeEventEmitter(RNDevMenu);
+const handlers: Map<string, () => any> = new Map();
+
+emitter.addListener('customDevOptionTap', (name: string) => {
+  const handler = handlers.get(name);
+  handler && handler();
+});
 
 type RNDevMenuModule = {
-  addItem: (name: string, handler: () => any) => Promise<void>
+  addItem: (name: string, handler: () => any) => Promise<void>,
 };
 
-let DevMenu: RNDevMenuModule = {
+const DevMenu: RNDevMenuModule = {
   addItem(name, handler) {
     if (!__DEV__) {
       return Promise.resolve();
     }
 
-    if (!emitter) {
-      emitter = new NativeEventEmitter(RNDevMenu);
-    }
-    if (!handlers) {
-      handlers = new Map();
-    }
-
     handlers.set(name, handler);
-
-    emitter.addListener('customDevOptionTap', (name: string) => {
-      if (handlers) {
-        const handler = handlers.get(name);
-        handler && handler();
-      }
-    });
-
     return RNDevMenu.addItem(name);
-  }
+  },
 };
 
 module.exports = DevMenu;
