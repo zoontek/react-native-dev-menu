@@ -41,7 +41,7 @@ $ yarn add react-native-dev-menu
 
 ## Manual linking
 
-If you use this package with React Native 0.60.0or superior, you will probably don't need to link it. Otherwise if it still cannot be found, follow this steps to link it manually :
+If you use this package with React Native 0.60.0 or superior, you will probably don't need to link it. Otherwise if it still cannot be found, follow this steps to link it manually :
 
 ```bash
 $ react-native link react-native-dev-menu
