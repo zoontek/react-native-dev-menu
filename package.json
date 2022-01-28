@@ -5,6 +5,7 @@
   "description": "Add custom items to the React Native dev menu",
   "author": "Mathieu Acthernoene <zoontek@gmail.com>",
   "main": "index.js",
+  "types": "index.d.ts",
   "homepage": "https://github.com/zoontek/react-native-dev-menu#readme",
   "repository": {
     "type": "git",
