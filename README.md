@@ -22,8 +22,8 @@ The native part of this module is a variation of [react-native-async-storage-dev
 
 ```js
 if (__DEV__) {
-  const DevMenu = require('react-native-dev-menu');
-  DevMenu.addItem('Say Hello', () => alert('Hello!'));
+  const DevMenu = require("react-native-dev-menu");
+  DevMenu.addItem("Say Hello", () => alert("Hello!"));
 }
 ```
 

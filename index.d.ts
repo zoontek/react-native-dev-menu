@@ -4,4 +4,3 @@ export interface RNDevMenuModule {
 
 declare const DevMenu: RNDevMenuModule;
 export default DevMenu;
-

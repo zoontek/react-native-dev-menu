@@ -1,16 +1,16 @@
 // @flow
 
-'use strict';
+"use strict";
 
 // $FlowFixMe
-const ReactNative = require('react-native');
+const ReactNative = require("react-native");
 const NativeEventEmitter = ReactNative.NativeEventEmitter;
 const RNDevMenu = ReactNative.NativeModules.RNDevMenu;
 
 const emitter: NativeEventEmitter = new NativeEventEmitter(RNDevMenu);
 const handlers: Map<string, () => any> = new Map();
 
-emitter.addListener('customDevOptionTap', (name: string) => {
+emitter.addListener("customDevOptionTap", (name: string) => {
   const handler = handlers.get(name);
   handler && handler();
 });

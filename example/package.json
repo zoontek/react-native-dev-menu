@@ -5,19 +5,19 @@
   "scripts": {
     "clean-modules": "rm -rf ./node_modules/react-native-dev-menu/{example,node_modules}",
     "clean": "rm -rf ./node_modules ./ios/Pods",
-    "postinstall": "yarn clean-modules && yarn pod-install",
-    "pod-install": "cd ./ios && pod install && cd ..",
+    "pod-update": "cd ./ios && pod update && cd ..",
+    "postinstall": "yarn clean-modules && yarn pod-update",
     "start": "react-native start",
     "reinstall": "yarn clean && yarn install"
   },
   "dependencies": {
-    "react": "16.11.0",
-    "react-native": "0.62.3",
+    "react": "18.0.0",
+    "react-native": "0.69.0",
     "react-native-dev-menu": "../"
   },
   "devDependencies": {
-    "@babel/core": "7.9.6",
-    "@babel/runtime": "7.9.6",
-    "metro-react-native-babel-preset": "0.59.0"
+    "@babel/core": "^7.18.5",
+    "@babel/runtime": "^7.18.3",
+    "metro-react-native-babel-preset": "^0.70.3"
   }
 }

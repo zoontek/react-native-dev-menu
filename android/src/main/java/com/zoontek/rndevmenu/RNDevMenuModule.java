@@ -29,6 +29,16 @@ public class RNDevMenuModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void addListener(String eventName) {
+    // Set up any upstream listeners or background tasks as necessary
+  }
+
+  @ReactMethod
+  public void removeListeners(Integer count) {
+    // Remove upstream listeners, stop unnecessary background tasks
+  }
+
+  @ReactMethod
   public void addItem(final String name, Promise promise) {
     if (mNames == null) {
       mNames = new ArrayList<>();
@@ -50,15 +60,16 @@ public class RNDevMenuModule extends ReactContextBaseJavaModule {
       manager.addCustomDevOption(name, new DevOptionHandler() {
         @Override
         public void onOptionSelected() {
-          getReactApplicationContext().getJSModule(RCTDeviceEventEmitter.class)
-                  .emit("customDevOptionTap", name);
+          getReactApplicationContext()
+            .getJSModule(RCTDeviceEventEmitter.class)
+            .emit("customDevOptionTap", name);
         }
       });
 
       mNames.add(name);
       promise.resolve(null);
-    } catch (Exception e) {
-      promise.reject(e);
+    } catch (Exception error) {
+      promise.reject(error);
     }
   }
 }

@@ -18,26 +18,25 @@
     "developer"
   ],
   "scripts": {
-    "format": "prettier --write '**/*.{js,json,md}'",
+    "format": "prettier '**/*' -u -w",
+    "prepare": "yarn setup-hooks",
+    "setup-hooks": "git config --local core.hooksPath .hooks",
     "typecheck": "flow ."
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "prettier": {
+    "trailingComma": "all"
   },
   "lint-staged": {
-    "**/*.{js,json,md,ts,tsx}": [
-      "prettier --write"
-    ]
+    "*": "prettier -u -w"
   },
   "peerDependencies": {
     "react-native": ">=0.61.0"
   },
   "devDependencies": {
-    "flow-bin": "0.113.0",
-    "husky": "4.2.5",
-    "lint-staged": "10.2.2",
-    "prettier": "2.0.5"
+    "flow-bin": "^0.176.3",
+    "lint-staged": "^13.0.2",
+    "prettier": "^2.7.1",
+    "react": "^18.0.0",
+    "react-native": "^0.69.0"
   }
 }
