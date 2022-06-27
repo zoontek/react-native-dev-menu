@@ -1,12 +1,21 @@
 {
   "name": "react-native-dev-menu",
-  "version": "4.0.3",
+  "version": "4.1.0",
   "license": "MIT",
   "description": "Add custom items to the React Native dev menu",
   "author": "Mathieu Acthernoene <zoontek@gmail.com>",
-  "main": "index.js",
-  "types": "index.d.ts",
   "homepage": "https://github.com/zoontek/react-native-dev-menu#readme",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/module/index.js",
+  "types": "dist/typescript/index.d.ts",
+  "files": [
+    "/android",
+    "/dist",
+    "/ios",
+    "/src",
+    "RNDevMenu.podspec",
+    "package.json"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/zoontek/react-native-dev-menu.git"
@@ -19,9 +28,18 @@
   ],
   "scripts": {
     "format": "prettier '**/*' -u -w",
-    "prepare": "yarn setup-hooks",
+    "prepare": "yarn setup-hooks && bob build",
     "setup-hooks": "git config --local core.hooksPath .hooks",
-    "typecheck": "flow ."
+    "tscheck": "tsc --project ./ --noEmit"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "dist",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
   },
   "prettier": {
     "trailingComma": "all"
@@ -33,10 +51,14 @@
     "react-native": ">=0.61.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.176.3",
-    "lint-staged": "^13.0.2",
+    "@types/react": "^18.0.14",
+    "@types/react-native": "^0.69.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^3.0.0",
     "react": "^18.0.0",
-    "react-native": "^0.69.0"
+    "react-native": "^0.69.0",
+    "react-native-builder-bob": "^0.18.3",
+    "typescript": "^4.7.4"
   }
 }

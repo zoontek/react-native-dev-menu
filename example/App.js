@@ -1,22 +1,9 @@
-// @flow
-
-import React, { Component } from "react";
+import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import DevMenu from "react-native-dev-menu";
 
 if (__DEV__) {
-  const DevMenu = require("react-native-dev-menu");
   DevMenu.addItem("Say Hello", () => alert("Hello!"));
-}
-
-export default class App extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>Please open the developer menu</Text>
-      </View>
-    );
-  }
 }
 
 const styles = StyleSheet.create({
@@ -37,3 +24,10 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+export const App = () => (
+  <View style={styles.container}>
+    <Text style={styles.welcome}>Welcome to React Native!</Text>
+    <Text style={styles.instructions}>Please open the developer menu</Text>
+  </View>
+);

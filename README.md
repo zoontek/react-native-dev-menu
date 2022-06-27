@@ -1,35 +1,32 @@
 # 📳 react-native-dev-menu
 
-[![npm version](https://badge.fury.io/js/react-native-dev-menu.svg)](https://badge.fury.io/js/react-native-dev-menu)
+[![npm version](https://badge.fury.io/js/react-native-dev-menu.svg)](https://www.npmjs.org/package/react-native-dev-menu)
 [![npm](https://img.shields.io/npm/dt/react-native-dev-menu.svg)](https://www.npmjs.org/package/react-native-dev-menu)
-![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-yellow.svg)
-![MIT](https://img.shields.io/dub/l/vibe-d.svg)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![MIT](https://img.shields.io/dub/l/vibe-d.svg)](https://opensource.org/licenses/MIT)
+<br />
+[![Platform - Android](https://img.shields.io/badge/platform-Android-3ddc84.svg?style=flat&logo=android)](https://www.android.com)
+[![Platform - iOS](https://img.shields.io/badge/platform-iOS-000.svg?style=flat&logo=apple)](https://developer.apple.com/ios)
 
-Add custom items to the React Native dev menu.
-
+Add custom items to the React Native dev menu.<br />
 The native part of this module is a variation of [react-native-async-storage-dev-menu-item](https://github.com/jsoendermann/react-native-async-storage-dev-menu-item/).
+
+![](https://github.com/zoontek/react-native-dev-menu/blob/master/docs/screenshots.png?raw=true)
 
 ## Support
 
 | Version | React Native Support |
 | ------- | -------------------- |
 | 4.0.0+  | 0.61.0+              |
-| 3.0.0+  | 0.60.0 - 0.60.6      |
-| 2.0.0+  | 0.56.0 - 0.59.10     |
 
-## Usage
+## Funding
 
-```js
-if (__DEV__) {
-  const DevMenu = require("react-native-dev-menu");
-  DevMenu.addItem("Say Hello", () => alert("Hello!"));
-}
-```
+<a href="https://github.com/sponsors/zoontek">
+  <img align="right" width="150" alt="This library helped you? Consider sponsoring!" src=".github/funding-octocat.svg">
+</a>
 
-## Screenshots
+This module is provided **as is**, I work on it in my free time.
 
-![](https://github.com/zoontek/react-native-dev-menu/blob/master/docs/screenshots.png?raw=true)
+If your company uses it in a production app, consider sponsoring this project 💰. You also can contact me for **premium** enterprise support, help with issues, prioritize bugfixes, feature requests, etc.
 
 ## Setup
 
@@ -39,71 +36,74 @@ $ npm install --save react-native-dev-menu
 $ yarn add react-native-dev-menu
 ```
 
-## Manual linking
+_Don't forget to run `pod install` after that !_
 
-If you use this package with React Native 0.60.0 or superior, you will probably don't need to link it. Otherwise if it still cannot be found, follow this steps to link it manually :
+## 🆘  Manual linking
 
-```bash
-$ react-native link react-native-dev-menu
-```
+Because this package targets React Native 0.61.0+, you will probably don't need to link it manually. Otherwise if it's not the case, follow this additional instructions:
 
-_NB: If you use a Cocoapods and have a `Podfile`, `react-native link` will only add this library as a dependency, and you'll need to run `pod install`._
+<details>
+  <summary><b>👀 See manual linking instructions</b></summary>
 
-### iOS specific setup
+### iOS
 
-#### CocoaPods linking
-
-After installing the npm package, add the following line to your Podfile :
-
-```ruby
-pod 'RNDevMenu', :path => '../node_modules/react-native-dev-menu'
-```
+Add this line to your `ios/Podfile` file, then run `pod install`.
 
 ```bash
-$ pod install
+target 'YourAwesomeProject' do
+  # …
+  pod 'RNDevMenu', :path => '../node_modules/react-native-dev-menu'
+end
 ```
 
-#### Manual linking
+### Android
 
-1. In the XCode's "Project navigator", right click on your project's Libraries folder ➜ `Add Files to <...>`
-2. Go to `node_modules` ➜ `react-native-dev-menu` ➜ select `RNDevMenu.xcodeproj`
-3. Add `libRNDevMenu.a` to `Build Phases` -> `Link Binary With Libraries`
-
-### Android specific setup
-
-#### Manual linking
-
-After installing the package, add the following line to the `./android/settings.gradle` file :
+1. Add the following lines to `android/settings.gradle`:
 
 ```gradle
-include ':app', ':react-native-dev-menu'
+include ':react-native-dev-menu'
 project(':react-native-dev-menu').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-dev-menu/android')
 ```
 
-Include it as dependency in the `./android/app/build.gradle` file :
+2. Add the implementation line to the dependencies in `android/app/build.gradle`:
 
 ```gradle
 dependencies {
-    implementation project(':react-native-dev-menu')
-    // ...
+  // ...
+  implementation project(':react-native-dev-menu')
 }
 ```
 
-Finally, you need to link the package to the `./android/app/src/main/java/…/MainApplication.java` file :
+3. Add the import and link the package in `MainApplication.java`:
 
 ```java
-import com.zoontek.rndevmenu.RNDevMenuPackage;
+import com.zoontek.rndevmenu.RNDevMenuPackage; // <- add the RNDevMenuPackage import
 
-// ...
+public class MainApplication extends Application implements ReactApplication {
 
-@Override
-protected List<ReactPackage> getPackages() {
-    return Arrays.<ReactPackage>asList(
-        new MainReactPackage(),
-        // ...
-        new RNDevMenuPackage(), // <-- Add it to the packages list
-    );
+  // …
+
+  @Override
+  protected List<ReactPackage> getPackages() {
+    @SuppressWarnings("UnnecessaryLocalVariable")
+    List<ReactPackage> packages = new PackageList(this).getPackages();
+    // …
+    packages.add(new RNDevMenuPackage());
+    return packages;
+  }
+
+  // …
 }
+```
 
-// ...
+</details>
+
+## Usage
+
+```ts
+import DevMenu from "react-native-dev-menu";
+
+if (__DEV__) {
+  DevMenu.addItem("Say Hello", () => alert("Hello!"));
+}
 ```

@@ -20,7 +20,7 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-ios/.xcode.env.local
+.xcode.env.local
 
 # Android/IntelliJ
 #
@@ -57,6 +57,9 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+
+# Bob
+dist/
 
 # Ruby / CocoaPods
 example/ios/Pods/
