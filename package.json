@@ -1,6 +1,6 @@
 {
   "name": "react-native-dev-menu",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "license": "MIT",
   "description": "Add custom items to the React Native dev menu",
   "author": "Mathieu Acthernoene <zoontek@gmail.com>",
@@ -28,7 +28,7 @@
   ],
   "scripts": {
     "format": "prettier '**/*' -u -w",
-    "postinstall": "git config --local core.hooksPath .hooks",
+    "setup-hooks": "git config --local core.hooksPath .hooks",
     "prepack": "bob build",
     "typecheck": "tsc --project ./ --noEmit"
   },
