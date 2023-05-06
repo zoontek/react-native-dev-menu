@@ -1,6 +1,10 @@
 #import <React/RCTDevMenu.h>
 #import "RNDevMenu.h"
 
+#ifdef RCT_NEW_ARCH_ENABLED
+#import "RNDevMenuSpec.h"
+#endif
+
 @interface RNDevMenu ()
 
 @property (nonatomic, strong) NSMutableArray<NSString *> *names;
@@ -10,14 +14,6 @@
 @implementation RNDevMenu
 
 RCT_EXPORT_MODULE();
-
-- (dispatch_queue_t)methodQueue {
-  return dispatch_get_main_queue();
-}
-
-+ (BOOL)requiresMainQueueSetup {
-  return YES;
-}
 
 - (NSArray<NSString *> *)supportedEvents {
   return @[@"customDevOptionTap"];
@@ -46,6 +42,16 @@ RCT_EXPORT_METHOD(addItem:(NSString *)name
   @catch (NSError *error) {
     reject(@"E_DEV_MENU_ADD_ITEM", error.localizedDescription, error);
   }
+}
+
+- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:(const facebook::react::ObjCTurboModule::InitParams &)params {
+  return std::make_shared<facebook::react::NativeRNDevMenuSpecJSI>(params);
+}
+
+- (void)addItem:(NSString *)name
+        resolve:(RCTPromiseResolveBlock)resolve
+         reject:(RCTPromiseRejectBlock)reject {
+  
 }
 
 @end

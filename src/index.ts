@@ -6,28 +6,30 @@ const NativeModule: {
   addItem: (name: string) => Promise<void>;
 } = RNDevMenu;
 
-let emitter: NativeEventEmitter | undefined;
-let handlers: Map<string, () => void> | undefined;
+const bag: {
+  emitter?: NativeEventEmitter;
+  handlers?: Map<string, () => void>;
+} = {};
 
 export const addItem = (name: string, handler: () => void): Promise<void> => {
   if (!__DEV__) {
     return Promise.resolve();
   }
 
-  if (handlers == null) {
-    handlers = new Map();
+  if (bag.handlers == null) {
+    bag.handlers = new Map();
   }
 
-  if (emitter == null) {
-    emitter = new NativeEventEmitter(RNDevMenu);
+  if (bag.emitter == null) {
+    bag.emitter = new NativeEventEmitter(RNDevMenu);
 
-    emitter.addListener("customDevOptionTap", (name: string) => {
-      const handler = handlers?.get(name);
+    bag.emitter.addListener("customDevOptionTap", (name: string) => {
+      const handler = bag.handlers?.get(name);
       handler != null && handler();
     });
   }
 
-  handlers.set(name, handler);
+  bag.handlers.set(name, handler);
   return NativeModule.addItem(name);
 };
 

@@ -1,23 +1,25 @@
-require 'json'
-package = JSON.parse(File.read('./package.json'))
+require "json"
+
+package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
 Pod::Spec.new do |s|
   s.name                      = "RNDevMenu"
-  s.dependency                  "React-Core"
-  s.dependency                  "React-Core/DevSupport"
-  s.dependency                  "React-RCTNetwork"
 
   s.version                   = package["version"]
   s.license                   = package["license"]
   s.summary                   = package["description"]
-  s.authors                   = package["author"]
+  s.author                    = package["author"]
   s.homepage                  = package["homepage"]
 
-  s.platform                  = :ios, "9.0"
-  s.ios.deployment_target     = "9.0"
-  s.tvos.deployment_target    = "11.0"
+  s.platforms                 = { :ios => "12.4", :tvos => "12.4" }
   s.requires_arc              = true
 
   s.source                    = { :git => package["repository"]["url"], :tag => s.version }
-  s.source_files              = "ios/*.{h,m}"
+  s.source_files              = "ios/**/*.{h,m,mm}"
+
+  if ENV['RCT_NEW_ARCH_ENABLED'] == '1' then
+    install_modules_dependencies(s)
+  else
+    s.dependency                  "React-Core"
+  end
 end

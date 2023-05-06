@@ -1,24 +1,46 @@
 package com.zoontek.rndevmenu;
 
-import com.facebook.react.ReactPackage;
-import com.facebook.react.bridge.JavaScriptModule;
+import androidx.annotation.Nullable;
+
+import com.facebook.react.TurboReactPackage;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.uimanager.ViewManager;
+import com.facebook.react.module.model.ReactModuleInfo;
+import com.facebook.react.module.model.ReactModuleInfoProvider;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class RNDevMenuPackage implements ReactPackage {
+public class RNDevMenuPackage extends TurboReactPackage {
 
+  @Nullable
   @Override
-  public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-    return Arrays.<NativeModule>asList(new RNDevMenuModule(reactContext));
+  public NativeModule getModule(String name, ReactApplicationContext reactContext) {
+    if (name.equals(RNDevMenuModuleImpl.NAME)) {
+      return new RNDevMenuModule(reactContext);
+    } else {
+      return null;
+    }
   }
 
   @Override
-  public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-    return Collections.emptyList();
+  public ReactModuleInfoProvider getReactModuleInfoProvider() {
+    return () -> {
+      final Map<String, ReactModuleInfo> moduleInfos = new HashMap<>();
+      boolean isTurboModule = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
+
+      ReactModuleInfo moduleInfo = new ReactModuleInfo(
+        RNDevMenuModuleImpl.NAME,
+        RNDevMenuModuleImpl.NAME,
+        false,
+        false,
+        true,
+        false,
+        isTurboModule
+      );
+
+      moduleInfos.put(RNDevMenuModuleImpl.NAME, moduleInfo);
+      return moduleInfos;
+    };
   }
 }
