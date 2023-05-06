@@ -19,9 +19,9 @@ RCT_EXPORT_MODULE();
   return @[@"customDevOptionTap"];
 }
 
-RCT_EXPORT_METHOD(addItem:(NSString *)name
-                 resolver:(RCTPromiseResolveBlock)resolve
-                 rejecter:(RCTPromiseRejectBlock)reject) {
+- (void)addItem:(NSString *)name
+        resolve:(RCTPromiseResolveBlock)resolve
+         reject:(RCTPromiseRejectBlock)reject {
   if (_names == nil) {
     _names = [NSMutableArray new];
   }
@@ -44,14 +44,22 @@ RCT_EXPORT_METHOD(addItem:(NSString *)name
   }
 }
 
+#ifdef RCT_NEW_ARCH_ENABLED
+
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:(const facebook::react::ObjCTurboModule::InitParams &)params {
   return std::make_shared<facebook::react::NativeRNDevMenuSpecJSI>(params);
 }
 
-- (void)addItem:(NSString *)name
-        resolve:(RCTPromiseResolveBlock)resolve
-         reject:(RCTPromiseRejectBlock)reject {
-  
+#else
+
+RCT_EXPORT_METHOD(addItem:(NSString *)name
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
+  [self addItem:name
+        resolve:resolve
+         reject:reject];
 }
+
+#endif
 
 @end
