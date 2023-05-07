@@ -18,16 +18,6 @@ The native part of this module is a variation of [react-native-async-storage-dev
 | ------- | -------------------- |
 | 4.0.0+  | 0.61.0+              |
 
-## Funding
-
-<a href="https://github.com/sponsors/zoontek">
-  <img align="right" width="150" alt="This library helped you? Consider sponsoring!" src=".github/funding-octocat.svg">
-</a>
-
-This module is provided **as is**, I work on it in my free time.
-
-If your company uses it in a production app, consider sponsoring this project 💰. You also can contact me for **premium** enterprise support, help with issues, prioritize bugfixes, feature requests, etc.
-
 ## Setup
 
 ```bash
