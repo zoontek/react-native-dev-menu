@@ -1,12 +1,6 @@
-import { NativeEventEmitter, NativeModules } from "react-native";
+import { NativeEventEmitter } from "react-native";
+import NativeModule from "./NativeRNDevMenu";
 
-const { RNDevMenu } = NativeModules;
-
-const NativeModule: {
-  addItem: (name: string) => Promise<void>;
-} = RNDevMenu;
-
-let emitter: NativeEventEmitter | undefined;
 let handlers: Map<string, () => void> | undefined;
 
 export const addItem = (name: string, handler: () => void): Promise<void> => {
@@ -16,15 +10,11 @@ export const addItem = (name: string, handler: () => void): Promise<void> => {
 
   if (handlers == null) {
     handlers = new Map();
-  }
 
-  if (emitter == null) {
-    emitter = new NativeEventEmitter(RNDevMenu);
-
-    emitter.addListener("customDevOptionTap", (name: string) => {
-      const handler = handlers?.get(name);
-      handler != null && handler();
-    });
+    new NativeEventEmitter(NativeModule).addListener(
+      "customDevOptionTap",
+      (name: string) => handlers?.get(name)?.(),
+    );
   }
 
   handlers.set(name, handler);
