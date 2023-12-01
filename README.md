@@ -1,3 +1,7 @@
+> ⚠️ This package is deprecated in favor of [`DevSettings`](https://reactnative.dev/docs/devsettings)
+
+---
+
 # 📳 react-native-dev-menu
 
 [![mit licence](https://img.shields.io/dub/l/vibe-d.svg?style=for-the-badge)](https://github.com/zoontek/react-native-dev-menu/blob/main/LICENSE)
